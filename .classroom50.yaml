@@ -1,0 +1,12 @@
+schema: "classroom50/repo-config/v1"
+classroom: "csci-530-os-fall-2026"
+assignment: "assg02"
+owner:
+  username: "Nagashree-HN"
+  id: 85179571
+  accepted_at: "2026-09-03T01:10:45Z"
+source:
+  owner: "csci530-os"
+  owner_id: 112191288
+  repo: "assg02-xv6"
+  branch: "main"
