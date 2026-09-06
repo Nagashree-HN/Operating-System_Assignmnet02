@@ -125,6 +125,7 @@ found:
   p->pid = allocpid();
   p->state = USED;
   p->syscall_mask = 0;
+  p->allowed_path[0] = 0;
 
   // Allocate a trapframe page.
   if((p->trapframe = (struct trapframe *)kalloc()) == 0){
@@ -279,6 +280,7 @@ kfork(void)
 
   // copy sandbox mask from parent to child.
   np->syscall_mask = p->syscall_mask;
+  safestrcpy(np->allowed_path, p->allowed_path, MAXPATH);
 
   // Cause fork to return 0 in the child.
   np->trapframe->a0 = 0;
